@@ -5,6 +5,7 @@ const result = document.querySelector(".result");
 const resultText=document.querySelector(".result h1")
 const restart_button=document.querySelector(".result button");
 
+// using forEach function
 const Winning_Condition=[
     [0 , 1 , 2],
     [3 , 4 , 5],
@@ -46,6 +47,7 @@ cellElements.forEach(cell=>{
     }
 })
 
+// function for checking which player winning game
  function winnerCheck(currentPlayer){
     return Winning_Condition.some(condition=>{
         console.log(condition);
@@ -57,14 +59,14 @@ cellElements.forEach(cell=>{
     })
  }
 
-
+// function for Draw the match!! 
  function isDraw(){
     return [...cellElements].every(cell=>{
         return cell.classList.contains(playerX)||cell.classList.contains(playerO);
     })
  }
 
-
+// function for swap the playing the chance
 function SwapPlayer(){
     Turn=!Turn;
     if(Turn){
@@ -76,7 +78,7 @@ function SwapPlayer(){
         player1.classList.remove("active");
     }
 }
-
+// some dynamic activies add in cell 
 function addIncell(cell,currentPlayer){
     cell.innerHTML=currentPlayer;
     cell.classList.add(currentPlayer);
